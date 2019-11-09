@@ -10,26 +10,58 @@
 </head>
 <body>
     <div id="app">
-        <div class="chapter">
-            <input v-model="msg" type="text" />
-            <p>${ msg }</p>
-        </div>
-        
-        <div class="chapter">
-            <select v-model="actValue">
-                <option v-for="(e ,i) in itemList" :value="`${ e.name } has ${ e.value } dollars.`">
-                    ${ e.name }
-                </option>
-            </select>
-            <p>${ actValue }</p>
-        </div>
-        
-        <div class="chapter">
-            <button class="Btn" @click="addCount(`${ spac }`)">plus 1</button>
-            <input v-model="spac" type="number" />
-            <p>${ count }</p>
-        </div>
-    </div> 
+        <section id="test" class="block">
+            <header class="header">
+                <h2>小測試</h2>
+            </header>
+
+            <div class="chapter">
+                <input v-model="msg" type="text" />
+                <p>${ msg }</p>
+            </div>
+            
+            <div class="chapter">
+                <select v-model="actValue">
+                    <option v-for="(e ,i) in itemList" :value="`${ e.name } has ${ e.value } dollars.`">
+                        ${ e.name }
+                    </option>
+                </select>
+                <p>${ actValue }</p>
+            </div>
+            
+            <div class="chapter">
+                <a class="Btn" @click="addCount(`${ spac }`)">plus 1</a>
+                <input v-model="spac" type="number" />
+                <p>${ count }</p>
+            </div>
+        </section>
+
+        <section id="bmi" class="block">
+            <header class="header">
+                <h2>BMI 小工具</h2>
+            </header>
+
+            <div class="chapter">
+                身高：
+                <input type="number" 
+                    placeholder="請輸入您的身高"
+                    v-model="height"
+                >
+            </div>
+            <div class="chapter">
+                體重：
+                <input type="number" 
+                    placeholder="請輸入您的體重"
+                    v-model="weight"
+                >
+            </div>
+            <div class="chapter">
+                <input type="text"
+                    v-model="bmi"
+                >
+            </div>
+        </section>
+    </div>
 
     <script src="js/first.js"></script>
 </body>
@@ -37,6 +69,8 @@
 
 <!-- Mark -->
 <script>
+    // 單向綁定 => {{ var }} or 自定義符 ex: ${ var }
+    // 雙向綁定 => 可讀可寫 => v-model
     // 雙向綁定的原理
     // < input
     //     v - bind: value = "something"

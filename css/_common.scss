@@ -5,19 +5,28 @@ body{
     background: #ddd;
     @include setSize(100vw, 100vh);
     #app{
-        background: #eee;
-        @include setSize(500px, auto);
-        min-height: 55px;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 1px 1px 1px 0 rgba(0,0,0,.25);
-        transition: .3s $cubic-FiSo;
+        display: flex;
+        .block{
+            display: flex;
+            flex-direction: column;
+
+            background: #eee;
+            @include setSize(350px, auto);
+            min-height: 55px;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 20px 20px 0;
+            box-shadow: 1px 1px 1px 0 rgba(0,0,0,.25);
+            transition: .3s $cubic-FiSo;
+
+            &:hover{ box-shadow: 1px 1px 20px 0 rgba(0,0,0,.35); }
+        }
+
+        .header{margin: 0 0 20px;}
         .chapter{
             display: flex;
             margin: 5px 0 15px;
         }
-
-        &:hover{ box-shadow: 1px 1px 20px 0 rgba(0,0,0,.35); }
     }
 
     .chapter{
@@ -26,12 +35,33 @@ body{
             align-items: center;
             margin: 0 0 0 8px;
         }
-    }
+        .Btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    .Btn{
-        background: #E5E5E5;    
-        @include setSize(80px , 30px);
-        user-select: none;
-        outline: none;
+            background: $colorMain;    
+            @include setSize(80px , 30px);
+            border: 2px solid $colorMain;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin: 0 8px 0 0;
+
+            color: #fff;
+            user-select: none;
+            outline: none;
+
+            transition: .3s $cubic-FiSo;
+            &:hover{
+                background: #eee;
+                color: $colorMain;
+            }
+            &:active{
+                background: #ddd;
+                box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .55)inset,
+                            -1px -1px 1px 0 rgba(255, 255, 255, .98)inset;
+                transition-duration: .05s;
+            }
+        }
     }
 }
