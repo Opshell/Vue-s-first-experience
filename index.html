@@ -5,14 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="css/stylesheet.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
     <div id="app">
         <input v-model="msg" type="text" />
-        <p>{{msg}}</p>
+        <p>${ msg }</p>
+
+        <select v-model="actValue">
+            <option 
+                v-for="(e ,i) in itemList"
+                :value="`${ e.name } has ${ e.value } dollars.`"
+            >
+                ${ e.name }
+            </option>
+        </select>
+        <p>${ actValue }</p>
     </div> 
 
     <script src="js/first.js"></script>
 </body>
 </html>
+
+<!-- Mark -->
+<script>
+    // 雙向綁定的原理
+    // < input
+    //     v - bind: value = "something"
+    //     v - on: input = "something = $event.target.value" >
+
+    
+</script>
