@@ -25,7 +25,8 @@
         </div>
         
         <div class="chapter">
-            <button class="Btn" @click="count ++">plus 1</button>
+            <button class="Btn" @click="addCount(`${ spac }`)">plus 1</button>
+            <input v-model="spac" type="number" />
             <p>${ count }</p>
         </div>
     </div> 
