@@ -1,6 +1,8 @@
 new Vue({
     el: '#app',
     data: {
-        msg: 'Hellow world!'
+        msg: 'Hellow world!',
+        act: '',
+        todoList: ['一', 'two', 'Trois']
     }
 });
