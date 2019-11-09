@@ -10,8 +10,9 @@ new Vue({
             {name: 'adven', value: 456},
             {name: 'bear', value: 229},
             {name: 'kaven', value: 0},
-        ]
-    }
+        ],
+        count: 0
+    },
 });
 
 /*

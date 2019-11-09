@@ -12,8 +12,26 @@ body{
         border-radius: 10px;
         box-shadow: 1px 1px 1px 0 rgba(0,0,0,.25);
         transition: .3s $cubic-FiSo;
-        p { margin: 5px 0 15px; }
+        .chapter{
+            display: flex;
+            margin: 5px 0 15px;
+        }
 
         &:hover{ box-shadow: 1px 1px 20px 0 rgba(0,0,0,.35); }
+    }
+
+    .chapter{
+        p{
+            display: flex;
+            align-items: center;
+            margin: 0 0 0 8px;
+        }
+    }
+
+    .Btn{
+        background: #E5E5E5;    
+        @include setSize(80px , 30px);
+        user-select: none;
+        outline: none;
     }
 }
